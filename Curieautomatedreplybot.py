@@ -1,5 +1,8 @@
 '''
 Made by @Locikll for Project Curie for Automated replies to dumb questions
+
+Requires packages: 
+pip install rocketchat_API
 '''
 
 import sys
@@ -13,7 +16,6 @@ import os.path
 import timeit
 import json
 
-from rocketchat.api import RocketChatAPI
 
 from rocketchat_API.rocketchat import RocketChat
 
@@ -41,10 +43,18 @@ def chatfeed():
     #print(message) #For Debugging purposes and to see message
     
     user = messages[0]['u']['username']
+        
+        
+        
+    errorstringmessages = []
     
-    iserrorstringinmessage = [msg for msg in re.findall(r'\w+',message) if msg.lower() in errorstring]
+    for errmsg in range(0,len(errorstring)-1):
+        iserrorstringinmessage = errorstring[errmsg] in message
+        
+        errorstringmessages.append(iserrorstringinmessage)
+        
     
-    if not not iserrorstringinmessage and user != yourusername:
+    if (True in errorstringmessages) and user != yourusername:
         
         print(rocket.chat_post_message("@"+user + " " + messagetosend, channel='curie').json()) 
 
