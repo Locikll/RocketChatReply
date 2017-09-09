@@ -33,15 +33,15 @@ enquirymessagetosend = 'To become a Curator you must be recommended, please read
 
 
 
-yourusername = 'testrocketapi'
-password = 'Somepasshere5443'
+yourusername = 'curiereplybot'
+password = 'S1mp3P4ssWordm20'
 
 #Strings for Errors and enquiries, please use LOWER CASE for new messages.
 enquirystring = ['how do i become a curator?','how do i become a curator','how do i become a curator','how to become curator','how to be a curator','how do you become recommended curator']
 errorstring = ['1 minute', '1 minutes', '1min','1 min', 'post is too old','too old']
 
 
-rocket = RocketChat(yourusername, password, server_url='https://steemit.chat/')
+rocket = RocketChat(yourusername.lower(), password, server_url='https://steemit.chat/')
 
 #Get Own User ID:
 UID = rocket.me().json()['_id']
