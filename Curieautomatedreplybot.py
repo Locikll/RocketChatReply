@@ -34,7 +34,7 @@ enquirymessagetosend = 'To become a Curator you must be recommended, please read
 
 
 yourusername = 'curiereplybot'
-password = 'S1mp3P4ssWordm20'
+password = ''
 
 #Strings for Errors and enquiries, please use LOWER CASE for new messages.
 enquirystring = ['how do i become a curator?','how do i become a curator','how do i become a curator','how to become curator','how to be a curator','how do you become recommended curator']
